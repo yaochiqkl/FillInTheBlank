@@ -82,6 +82,9 @@ a:active{ text-decoration: none; }
 	border-radius: 4px;
 	cursor: pointer;
 }
+.content .foot .number .question_number.answered{
+	background-color: #70D3F2;
+}
 .content .foot .answer {
 	margin: 0 auto;
 	width: 85%;	

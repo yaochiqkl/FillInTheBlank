@@ -118,6 +118,8 @@
 				var $current = $(".selected");
 				if ($current.length>0) {
 					$current.removeClass("mouseover").removeClass("selected").addClass("answered");
+					var $n = $current.attr("title");
+					$(".question_number:eq("+$n+")").addClass("answered");
 					$(this).addClass("answered");
 					var answer = $(this).text();
 					var $answer_box = $(".question.selected");
