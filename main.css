@@ -1,0 +1,92 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:14px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+body{
+	font-family:'Segoe UI Light', CustomSegoeUILight, Arial;
+	font-size: 16px;
+}
+a{color:white;text-decoration: none;}
+a:link{ text-decoration: none;color:white; }
+a:visited{ text-decoration: none; }
+a:hover{ text-decoration: none; }
+a:active{ text-decoration: none; }
+.content {
+	width: 80%;
+	max-width: 750px;
+	min-width: 700px;
+	margin: 0 auto;
+	/*border: 1px solid grey;*/
+}
+.content .head {
+	height: 40px;
+	background-color: #F5F5F5;
+}
+.content .head .submit{
+	float: right;
+	padding: 3px 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 5px 10px;
+	cursor: pointer;
+}
+.content .main {
+	height: 300px;
+	overflow: auto;
+	line-height: 2em;
+	padding: 10px;
+	border: 1px solid grey;
+}
+.content .main .text .question{
+	display: inline-block;
+	padding: 2px 25px;
+	margin-bottom: -5px;
+	width: 30px;
+	height: 22px;
+	border-bottom: 1px solid #F5F5F5;
+	cursor: pointer;
+}
+.content .main .text .selected{
+	background-color: #70D3F2;
+	border-radius: 5px 5px 0 0;
+}
+.content .foot {
+
+}
+.content .foot .number{
+	text-align: center;
+	padding: 10px;
+}
+.content .foot .number .question_number{
+	display: inline-block;
+	color: white;
+	background: #DBDBDB;
+	width: 20px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.content .foot .answer {
+	margin: 0 auto;
+	width: 70%;	
+	border: 1px solid black;
+	padding: 5px;
+}
+.content .foot .answer table{
+	width: 100%;
+	text-align: center;
+}
+.content .foot .answer table td{
+	border: 1px solid #F5F5F5;
+	cursor: pointer;
+}

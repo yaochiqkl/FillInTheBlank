@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<header></header>
+	<nav></nav>
+	<article class="content">
+		<header class="head">
+			<span class="goback">返回</span>
+			<span class="submit">交卷</span>
+		</header>
+		<section class="main">
+			<div class="tip">点击空格</div>
+			<div class="text">
+				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or sisters have a higher risk of 1
+				<span class="question selected" id="question1" ></span> 
+				it, too? According to the largest study of siblings (兄弟姐妹) in families with autism, the answer is yes. Among 664 children who had at least one older sibling with the developmental disorder, the 2 
+				<span class="question " id="question2"></span> 
+				risk of autism was nearly 19%, 3 
+				<span class="question " id="question3"></span> 
+				higher than previous sibling-recurrence estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
+				The 4 
+				<span class="question " id="question4"></span> 
+				suggest that genes play a key role in autism risk. But they also hint that other environmental factors 5 
+				<span class="question " id="question5"></span> 
+				by siblings, like influences in the womb (子宫), may be important as well. 
+				On the 6 
+				<span class="question " id="question6"></span> 
+				of the findings, the researchers recommend that doctors closely 7 
+				<span class="question " id="question7"></span> younger siblings of autistic children to pick up any early signs of the disorder, 8 
+				<span class="question " id="question8"></span> an unusually large head or delayed language development and communication skills. Evidence suggests that early 9
+				<span class="question " id="question9"></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10
+				<span class="question " id="question10"></span>
+
+			</div>
+		</section>
+		<section class="foot">
+			<div class="number">
+				<span class="question_number"><a href="#question1">1</a></span>
+				<span class="question_number"><a href="#question2">2</a></span>
+				<span class="question_number"><a href="#question3">3</a></span>
+				<span class="question_number"><a href="#question4">4</a></span>
+				<span class="question_number"><a href="#question5">5</a></span>
+				<span class="question_number"><a href="#question6">6</a></span>
+				<span class="question_number"><a href="#question7">7</a></span>
+				<span class="question_number"><a href="#question8">8</a></span>
+				<span class="question_number"><a href="#question9">9</a></span>
+				<span class="question_number"><a href="#question10">10</a></span>
+			</div>
+			<div class="answer">
+				<table>
+					<tr>
+						<td>answer</td>
+						<td>answer</td>
+						<td>answer</td>
+					</tr>
+					<tr>
+						<td>answer</td>
+						<td>answer</td>
+						<td>answer</td>
+					</tr>
+					<tr>
+						<td>answer</td>
+						<td>answer</td>
+						<td>answer</td>
+					</tr>
+					<tr>
+						<td>answer</td>
+						<td>answer</td>
+						<td>answer</td>
+					</tr>
+					<tr>
+						<td>answer</td>
+						<td>answer</td>
+						<td>answer</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+	</article>
+	<footer></footer>
+	<script src="jquery.min.js"></script>
+	<!--<script src="main.js"></script>-->
+	<script>
+ 		$(function(){
+			$(".question").click(function(){
+				$(".question").removeClass("selected");
+				$(this).addClass("selected");
+			});
+			$(".question_number").click(function(){
+
+			});
+		}); 
+	</script>
+</body>
+</html>
