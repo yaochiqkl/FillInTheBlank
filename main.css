@@ -67,6 +67,7 @@ a:active{ text-decoration: none; }
 .content .foot .number{
 	text-align: center;
 	padding: 10px;
+	height: 35px;
 }
 .content .foot .number .question_number{
 	display: inline-block;
