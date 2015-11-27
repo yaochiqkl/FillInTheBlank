@@ -78,7 +78,7 @@ a:active{ text-decoration: none; }
 }
 .content .foot .answer {
 	margin: 0 auto;
-	width: 70%;	
+	width: 85%;	
 	border: 1px solid black;
 	padding: 5px;
 }
@@ -88,5 +88,4 @@ a:active{ text-decoration: none; }
 }
 .content .foot .answer table td{
 	border: 1px solid #F5F5F5;
-	cursor: pointer;
 }

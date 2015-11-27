@@ -40,16 +40,16 @@
 		</section>
 		<section class="foot">
 			<div class="number">
-				<span class="question_number"><a href="#question1">1</a></span>
-				<span class="question_number"><a href="#question2">2</a></span>
-				<span class="question_number"><a href="#question3">3</a></span>
-				<span class="question_number"><a href="#question4">4</a></span>
-				<span class="question_number"><a href="#question5">5</a></span>
-				<span class="question_number"><a href="#question6">6</a></span>
-				<span class="question_number"><a href="#question7">7</a></span>
-				<span class="question_number"><a href="#question8">8</a></span>
-				<span class="question_number"><a href="#question9">9</a></span>
-				<span class="question_number"><a href="#question10">10</a></span>
+				<span class="question_number" title="0"><a href="#question1">1</a></span>
+				<span class="question_number" title="1"><a href="#question2">2</a></span>
+				<span class="question_number" title="2"><a href="#question3">3</a></span>
+				<span class="question_number" title="3"><a href="#question4">4</a></span>
+				<span class="question_number" title="4"><a href="#question5">5</a></span>
+				<span class="question_number" title="5"><a href="#question6">6</a></span>
+				<span class="question_number" title="6"><a href="#question7">7</a></span>
+				<span class="question_number" title="7"><a href="#question8">8</a></span>
+				<span class="question_number" title="8"><a href="#question9">9</a></span>
+				<span class="question_number" title="9"><a href="#question10">10</a></span>
 			</div>
 			<div class="answer">
 				<table>
@@ -92,7 +92,9 @@
 				$(this).addClass("selected");
 			});
 			$(".question_number").click(function(){
-
+				var $n = $(this).attr("title");
+				$(".question").removeClass("selected");
+				$(".question:eq("+$n+")").addClass("selected");
 			});
 		}); 
 	</script>
