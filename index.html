@@ -40,43 +40,43 @@
 		</section>
 		<section class="foot">
 			<div class="number">
-				<span class="question_number" title="0"><a href="#question1">1</a></span>
-				<span class="question_number" title="1"><a href="#question2">2</a></span>
-				<span class="question_number" title="2"><a href="#question3">3</a></span>
-				<span class="question_number" title="3"><a href="#question4">4</a></span>
-				<span class="question_number" title="4"><a href="#question5">5</a></span>
-				<span class="question_number" title="5"><a href="#question6">6</a></span>
-				<span class="question_number" title="6"><a href="#question7">7</a></span>
-				<span class="question_number" title="7"><a href="#question8">8</a></span>
-				<span class="question_number" title="8"><a href="#question9">9</a></span>
-				<span class="question_number" title="9"><a href="#question10">10</a></span><br>
+				<a href="#question1"><span class="question_number" title="0">1</span></a>
+				<a href="#question2"><span class="question_number" title="1">2</span></a>
+				<a href="#question3"><span class="question_number" title="2">3</span></a>
+				<a href="#question4"><span class="question_number" title="3">4</span></a>
+				<a href="#question5"><span class="question_number" title="4">5</span></a>
+				<a href="#question6"><span class="question_number" title="5">6</span></a>
+				<a href="#question7"><span class="question_number" title="6">7</span></a>
+				<a href="#question8"><span class="question_number" title="7">8</span></a>
+				<a href="#question9"><span class="question_number" title="8">9</span></a>
+				<a href="#question10"><span class="question_number" title="9">10</span></a><br>
 			</div>
 			<div class="answer">
 				<table>
 					<tr>
-						<td>answer</td>
-						<td>answer</td>
-						<td>answer</td>
+						<td>answerasas</td>
+						<td>asdf</td>
+						<td>fdsa</td>
 					</tr>
 					<tr>
-						<td>answer</td>
-						<td>answer</td>
-						<td>answer</td>
+						<td>sser</td>
+						<td>anser</td>
+						<td>addwer</td>
 					</tr>
 					<tr>
-						<td>answer</td>
-						<td>answer</td>
-						<td>answer</td>
+						<td>swer</td>
+						<td>awwwer</td>
+						<td>anfer</td>
 					</tr>
 					<tr>
-						<td>answer</td>
-						<td>answer</td>
-						<td>answer</td>
+						<td>andfwer</td>
+						<td>agfdwer</td>
+						<td>axcwer</td>
 					</tr>
 					<tr>
-						<td>answer</td>
-						<td>answer</td>
-						<td>answer</td>
+						<td>xcswer</td>
+						<td>avxccswer</td>
+						<td>ancvxcwer</td>
 					</tr>
 				</table>
 			</div>
@@ -87,6 +87,7 @@
 	<!--<script src="main.js"></script>-->
 	<script>
  		$(function(){
+ 			//$(".main").scrollTop(0);
  			var clickEffect = function(){
  				var $n = $(this).attr("title");
  				$(".question").removeClass("selected");
@@ -95,7 +96,7 @@
  				$("#triangle").remove();
  				var triangle = "<span id = 'triangle'>▲</div>";
  				$(".number").append(triangle);
- 				var left = $n*24 - 107;
+ 				var left = $n*27.2 - 122;
  				$("#triangle").css({
  					"position":"relative",
  					"left":left+"px"
@@ -103,6 +104,26 @@
  			};
 			$(".question").click(clickEffect);
 			$(".question_number").click(clickEffect);
+			$("td").mouseover(function(){
+				$(this).addClass("mouseover");
+				var answer = $(this).text();
+				var $answer_box = $(".question.selected");
+				$answer_box.text(answer); 
+			});
+			$("td").mouseout(function(){
+				$(this).removeClass("mouseover");
+				$(".selected:not(.answered)").text("");
+			});
+			$("td").click(function(){
+				var $current = $(".selected");
+				if ($current.length>0) {
+					$current.removeClass("mouseover").removeClass("selected").addClass("answered");
+					$(this).addClass("answered");
+					var answer = $(this).text();
+					var $answer_box = $(".question.selected");
+					$answer_box.text(answer); 
+				}
+			});
 		}); 
 	</script>
 </body>
