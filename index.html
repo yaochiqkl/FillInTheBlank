@@ -100,6 +100,13 @@
 					<td>4</td>
 					<td>5</td>
 				</tr>
+				<tr>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+				</tr>
 			</table>
 		</article>
 		<footer class="foot">
@@ -163,25 +170,43 @@
 				}
 			});
 			$(".submit").click(function(){
-				$(".popUpWin").css({
+/*				$(".popUpWin").css({
 					display:"block"
 				});
 				$(".maskLayer").css({
 					display:"block"
-				});
+				});*/
+				checkAnswers();
 			});
 		}); 
 	var answers = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms");
 	var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
 	for(var i = 0; i < options.length; i++){
-		console.log(options[i]);
+		//console.log(options[i]);
 	}
 	function checkAnswers () {
+		var accuracy = 0;
+		$(".question").removeClass("selected").removeClass("answered");
+		$(".question_number").removeClass("selected").removeClass("answered");
 		for(var i = 0; i < 10; i++){
-			$("#")
+			var answer = $("#question"+i).text();
+			if( answer == answers[i]){
+				accuracy++;
+				$(".popUpWin .main td:eq("+i+")").addClass("correct");
+				$(".content .foot .number span:eq("+i+")").addClass("correct");
+				$("#question"+i).addClass("correct");
+			} else {
+				$(".popUpWin .main td:eq("+i+")").addClass("incorrect");
+				$(".content .foot .number span:eq("+i+")").addClass("incorrect");
+				$("#question"+i).addClass("incorrect");
+			}
 		}		
+		accuracy = accuracy*10+"%";
+		$(".outcome").text(accuracy);
 	}
+	function showAnalysis () {
 
+	}
 	</script>
 </body>
 </html>

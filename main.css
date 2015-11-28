@@ -14,7 +14,7 @@ fieldset, img { border:0; }
 button, input, select, textarea { font-size:100%; }
 table { border-collapse:collapse; border-spacing:0; }
 body{
-	font-family:'Segoe UI Light', CustomSegoeUILight, Arial;
+	font-family:Microsoft Yahei, CustomSegoeUILight, Arial;
 	font-size: 16px;
 }
 a{color:black;text-decoration: none;}
@@ -69,6 +69,13 @@ a:active{ text-decoration: none; }
 	border-radius: 5px 5px 0 0;
 	color: white;
 }
+.content .main .text .correct{
+	color: #73D2C0;
+}
+.content .main .text .incorrect{
+	color: #EE798C;
+	text-decoration: line-through;
+}
 
 .content .foot {
 
@@ -89,6 +96,12 @@ a:active{ text-decoration: none; }
 }
 .content .foot .number .question_number.answered{
 	background-color: #70D3F2;
+}
+.content .foot .number .question_number.correct{
+	background-color: #73D2C0;
+}
+.content .foot .number .question_number.incorrect{
+	background-color: #EE798C;
 }
 .content .foot .answer {
 	margin: 0 auto;
@@ -127,7 +140,7 @@ a:active{ text-decoration: none; }
 	z-index:100;
 }
 .popUpWin .head{
-	font-size: 20px;
+	font-size: 18px;
 	padding: 15px 0;
 	text-align: center;
 	vertical-align: center;
@@ -137,35 +150,49 @@ a:active{ text-decoration: none; }
 .popUpWin .main{
 	width: 100%;
 	height: 250px;
-	padding: 10px;
+	padding: 0px;
 	border-bottom: 1px solid #F5F5F5;
+	padding-top: 20px;
 }
 .popUpWin .main .accuracy{
-	width: 200px;
-	margin: 0 auto;
+	width: 100px;
+	margin: 10px auto;
+	text-align: center;
 }
 .popUpWin .main .accuracy .outcome{
-	width:70px;
-	margin: 0 auto;
-	font-weight: bolder;
+	font-weight: bold;
 	color:#70D3F2;
 	font-size: 35px;
 }
 .popUpWin .main .accuracy .text{
-	width:50px;
 	margin: 10px auto;
+}
+.popUpWin .main table{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}
+.popUpWin .main table tr{}
+.popUpWin .main table tr td{
+	width: 30px;
+	padding: 20px 5px;
+	color: #E48D9D;
+	font-size: 18px;
+}
+.popUpWin .main table tr .correct{
+	color: #59BCA8;
 }
 .popUpWin .foot{
 	color: black;
 }
 .popUpWin .foot a{
 	display: inline-block;
-	width: 40%;
-	border-radius:10px;
+	width: 40.5%;
+	border-radius:20px;
 	border:1px solid #70D3F2;
 	text-align: center;
 	padding: 5px;
-	margin: 15px 22px;
+	margin: 15px 25px;
 	color: #70D3F2;
 }
 .popUpWin .foot a:hover{
