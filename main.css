@@ -76,6 +76,11 @@ a:active{ text-decoration: none; }
 	color: #EE798C;
 	text-decoration: line-through;
 }
+.content .main .text .correct_answer{
+	background-color: #73D2C0;
+	color: white;
+	padding: 5px 10px;
+}
 
 .content .foot {
 

@@ -17,24 +17,24 @@
 			<div class="tip">点击空格</div>
 			<div class="text">
 				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or sisters have a higher risk of 1
-				<span class="question selected" id="question0" title="0" ></span> 
+				<span class="question selected" id="question0"></span> 
 				it, too? According to the largest study of siblings (兄弟姐妹) in families with autism, the answer is yes. Among 664 children who had at least one older sibling with the developmental disorder, the 2 
-				<span class="question " id="question1" title="1" ></span> 
+				<span class="question " id="question1"></span> 
 				risk of autism was nearly 19%, 3 
-				<span class="question " id="question2" title="2" ></span> 
+				<span class="question " id="question2"></span> 
 				higher than previous sibling-recurrence estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
 				The 4 
-				<span class="question " id="question3" title="3"></span> 
+				<span class="question " id="question3"></span> 
 				suggest that genes play a key role in autism risk. But they also hint that other environmental factors 5 
-				<span class="question " id="question4" title="4"></span> 
+				<span class="question " id="question4"></span> 
 				by siblings, like influences in the womb (子宫), may be important as well. 
 				On the 6 
-				<span class="question " id="question5" title="5"></span> 
+				<span class="question " id="question5"></span> 
 				of the findings, the researchers recommend that doctors closely 7 
-				<span class="question " id="question6" title="6"></span> younger siblings of autistic children to pick up any early signs of the disorder, 8 
-				<span class="question " id="question7" title="7"></span> an unusually large head or delayed language development and communication skills. Evidence suggests that early 9
-				<span class="question " id="question8" title="8"></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10
-				<span class="question " id="question9" title="9"></span>
+				<span class="question " id="question6"></span> younger siblings of autistic children to pick up any early signs of the disorder, 8 
+				<span class="question " id="question7"></span> an unusually large head or delayed language development and communication skills. Evidence suggests that early 9
+				<span class="question " id="question8"></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10
+				<span class="question " id="question9"></span>
 
 			</div>
 		</section>
@@ -186,10 +186,11 @@
 	}
 	function checkAnswers () {
 		var accuracy = 0;
+		var answer = null;
 		$(".question").removeClass("selected").removeClass("answered");
 		$(".question_number").removeClass("selected").removeClass("answered");
 		for(var i = 0; i < 10; i++){
-			var answer = $("#question"+i).text();
+			answer = $("#question"+i).text();
 			if( answer == answers[i]){
 				accuracy++;
 				$(".popUpWin .main td:eq("+i+")").addClass("correct");
@@ -199,8 +200,15 @@
 				$(".popUpWin .main td:eq("+i+")").addClass("incorrect");
 				$(".content .foot .number span:eq("+i+")").addClass("incorrect");
 				$("#question"+i).addClass("incorrect");
+				//插入正确答案
+				if ($("#question"+i).text() === '') {
+					$("#question"+i).html("<span style='color:black;text-decoration:none;display:inline-block;'>-</span>");
+				}
+				var correct_answer = "<span class = 'correct_answer'>"+answers[i]+"</span>";
+				$("#question"+i).after(correct_answer);
 			}
-		}		
+		}
+
 		accuracy = accuracy*10+"%";
 		$(".outcome").text(accuracy);
 	}
