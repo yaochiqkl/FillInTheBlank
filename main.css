@@ -102,13 +102,23 @@ a:active{ text-decoration: none; }
 	color: #73D2C0;
 }
 .content .main .text .incorrect{
+	height: 22px;
+	margin: 0 5px;
 	color: #EE798C;
+	background-color: #E5E5E5;
+	border-radius: 5px 5px 0 0;
 	text-decoration: line-through;
+}
+.content .main .text .undo{
+	background-color: #FFF;
 }
 .content .main .text .correct_answer{
 	background-color: #73D2C0;
 	color: white;
 	padding: 5px 10px;
+}
+.content .main .text .highlight{
+	background-color: yellow;
 }
 .content #drag{
 	cursor: n-resize; 

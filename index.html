@@ -19,24 +19,24 @@
 				<span class="text">点击空格处，选择最恰当的单词</span>
 			</div>
 			<div class="text">
-				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or sisters have a higher risk of 1
+				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or <span class="tip0">sisters</span> have a higher risk of 1
 				<span class="question selected" id="question0"></span> 
-				it, too? According to the largest study of siblings (兄弟姐妹) in families with autism, the answer is yes. Among 664 children who had at least one older sibling with the developmental disorder, the 2 
+				it, too? <span class="tip0">According to</span> the largest study of siblings (兄弟姐妹) in families with autism, the answer is maybe yes. Among 664 children who had at least one older sibling with the <span class="tip1">developmental disorder</span>, the 2 
 				<span class="question " id="question1"></span> 
-				risk of autism was nearly 19%, 3 
+				<span class="tip1">risk of autism</span> was nearly 19%, 3 
 				<span class="question " id="question2"></span> 
-				higher than previous sibling-recurrence estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
+				higher than previous<span class="tip2">sibling-recurrence</span>  estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
 				The 4 
 				<span class="question " id="question3"></span> 
-				suggest that genes play a key role in autism risk. But they also hint that other environmental factors 5 
+				suggest that genes play a key role  <span class="tip3">in</span> autism risk. But they also hint that other environmental factors <span class="tip4">in</span> 5 
 				<span class="question " id="question4"></span> 
 				by siblings, like influences in the womb (子宫), may be important as well. 
 				On the 6 
 				<span class="question " id="question5"></span> 
-				of the findings, the researchers recommend that doctors closely 7 
-				<span class="question " id="question6"></span> younger siblings of autistic children to pick up any early signs of the disorder, 8 
-				<span class="question " id="question7"></span> an unusually large head or delayed language development and communication skills. Evidence suggests that early 9
-				<span class="question " id="question8"></span> and diagnosis of autism can help children take advantage of therapies that can treat some of its 10
+				of the findings, the researchers recommend <span class="tip5">in</span> that doctors closely 7 
+				<span class="question " id="question6"></span> younger <span class="tip6">in</span> siblings of autistic children to pick up any early signs of the disorder, 8 
+				<span class="question " id="question7"></span> an <span class="tip7">unusually</span> large head or delayed language development and communication skills. Evidence suggests <span class="tip8">unusually</span> that early 9
+				<span class="question " id="question8"></span> and diagnosis of <span class="tip9">unusually</span>  autism can help children take advantage of therapies that can treat some of its 10
 				<span class="question " id="question9"></span>
 				
 			</div>
@@ -46,16 +46,16 @@
 		</div>
 		<section class="foot">
 			<div class="number">
-				<span class="question_number" title="0">1</span>
-				<span class="question_number" title="1">2</span>
-				<span class="question_number" title="2">3</span>
-				<span class="question_number" title="3">4</span>
-				<span class="question_number" title="4">5</span>
-				<span class="question_number" title="5">6</span>
-				<span class="question_number" title="6">7</span>
-				<span class="question_number" title="7">8</span>
-				<span class="question_number" title="8">9</span>
-				<span class="question_number" title="9">10</span><br>
+				<span class="question_number" id="question_num0">1</span>
+				<span class="question_number" id="question_num1">2</span>
+				<span class="question_number" id="question_num2">3</span>
+				<span class="question_number" id="question_num3">4</span>
+				<span class="question_number" id="question_num4">5</span>
+				<span class="question_number" id="question_num5">6</span>
+				<span class="question_number" id="question_num6">7</span>
+				<span class="question_number" id="question_num7">8</span>
+				<span class="question_number" id="question_num8">9</span>
+				<span class="question_number" id="question_num9">10</span><br>
 			</div>
 			<div class="answer">
 				<table>
@@ -122,7 +122,7 @@
 	</div>
 	<footer></footer>
 	<script src="jquery.min.js"></script>
-	<script src="analysis.js"></script>
+	<script src="data.js"></script>
 	<!--<script src="main.js"></script>-->
 	<script>
 		//正确答案
@@ -179,11 +179,12 @@
 	       } 
 	} 
 	function clickEffect(){
-	   	var $n = $(this).index();
+	   	var $n = parseInt($(this).attr("id").slice(-1));
 	   	$(".question").removeClass("selected");
 	   	$(".question:eq("+$n+")").addClass("selected");
 	   	//跳转锚点
-	   	location.hash="question"+$n;
+	   	//location.hash="question"+$n;
+	    $(".content .main").animate({scrollTop:$("#quesion0")},800);
 	   	//三角
 	   	moveTriangle($n);
 	}
@@ -241,6 +242,7 @@
 				//插入正确答案
 				if ($("#question"+i).text() === '') {
 					$("#question"+i).html("<span style='color:black;text-decoration:none;display:inline-block;'>-</span>");
+					$("#question"+i).addClass("undo");
 				}
 				var correct_answer = "<span class = 'correct_answer'>"+answers[i]+"</span>";
 				$("#question"+i).after(correct_answer);
@@ -255,15 +257,31 @@
 		var $text = $("<div id='analysis'><div class='title'>答案</div><div class='content result'></div><div class='title'>结构</div><div class='content structure'></div></div>");
 		$(".content .answer table").remove();
 		$(".content .answer").append($text);
-		$(".content .answer #analysis .result").text(analysis[0].answer);
-		$(".content .answer #analysis .structure").text(analysis[0].structure);
+		$("#analysis .result").text(analysis[0].answer);
+		$("#analysis .structure").text(analysis[0].structure);
 		$(".question,.question_number").unbind("click",clickEffect).click(showAnalysisClick);
 		$(".submit").remove();
+		location.hash="question0";
+		$(".tip0").addClass("highlight");
 	}
 	function showAnalysisClick(){
-		var $n = $(this).index();
-		//三角
+		removeHighlight();
+		//cancel the solution of getting index
+		var $n = parseInt($(this).attr("id").slice(-1));
 		moveTriangle($n);
+		showDetails($n);
+		addHighlight($n);
+		location.hash="question"+$n;
+	}
+	function showDetails($n){
+		$("#analysis .result").text(analysis[$n].answer);
+		$("#analysis .structure").text(analysis[$n].structure);
+	}
+	function addHighlight($n){
+		$(".tip"+$n).addClass("highlight");
+	}
+	function removeHighlight(){
+		$(".content .main .text span").removeClass("highlight");
 	}
 	</script>
 </body>
