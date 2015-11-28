@@ -127,50 +127,27 @@
 		var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
 		var analysis = new Array("第一题解析： \n a a a","第二题解析： a a a","第三题解析： a a a","第四题解析： a a a","第五题解析： a a a","第六题解析： a a a","第七题解析： a a a","第八题解析： a a a","第九题解析： a a a","第十题解析： a a a");
  		$(function(){
- 			(function(){
- 				//init triangle
- 				var triangle = "<span id = 'triangle'>▲</div>";
- 				$(".number").append(triangle);
- 				$("#triangle").css({
- 					"position":"relative",
- 					"left":"-124px"
- 				});
- 				//init dragable function
- 				bindResize(document.getElementById('main')); 
- 			})();
- 			//init click effect
-
-			$(".question").click(clickEffect);
-			$(".question_number").click(clickEffect);
-			$("td").mouseover(mouseOver);
-			$("td").mouseout(mouseOut);
-			$("td").click(function(){
-				var $current = $(".selected");
-				var $n = $current.index();
-				if ($current.length>0) {
-					$current.removeClass("mouseover").removeClass("selected").addClass("answered");
-					$(".question_number:eq("+$n+")").addClass("answered");
-					$(this).addClass("answered");
-					var answer = $(this).text();
-					var $answer_box = $(".question.selected");
-					$answer_box.text(answer); 
-				}
-			});
-			//Submit and Checkout
-			$(".submit").click(function(){
- 				$(".popUpWin,.maskLayer").css({
-					display:"block"
-				});
-				checkAnswers();
-			});
-			$(".popUpWin .inquery").click(function(){
-				$(".popUpWin,.maskLayer").css({
-					display:"none"
-				});
-				console.log("return");
-				return false;
-			});
+ 			initPage();
 		}); 
+	function initPage(){
+		//init triangle
+		var triangle = "<span id = 'triangle'>▲</div>";
+		$(".number").append(triangle);
+		$("#triangle").css({
+			"position":"relative",
+			"left":"-124px"
+		});
+		//init dragable function
+		bindResize(document.getElementById('main')); 
+		$(".question").click(clickEffect);
+		$(".question_number").click(clickEffect);
+		$("td").mouseover(mouseOver);
+		$("td").mouseout(mouseOut);
+		$("td").click(tableClick);
+		//Submit and Checkout
+		$(".submit").click(submitAnswers);
+		$(".popUpWin .inquery").click(closePopUpWin);
+	}
 	function checkAnswers () {
 		var accuracy = 0;
 		var answer = null;
@@ -214,7 +191,7 @@
 	       function up(){ 
 	            $(document).unbind("mousemove", move).unbind("mouseup", up) ;
 	       } 
-	   } 
+	} 
 	function clickEffect(){
 	   	var $n = $(this).index();
 	   	$(".question").removeClass("selected");
@@ -240,6 +217,30 @@
 	function mouseOut(){
 		$(this).removeClass("mouseover");
 		$(".selected:not(.answered)").text("");
+	}
+	function tableClick(){
+		var $current = $(".selected");
+		var $n = $current.index();
+		if ($current.length>0) {
+			$current.removeClass("mouseover").removeClass("selected").addClass("answered");
+			$(".question_number:eq("+$n+")").addClass("answered");
+			$(this).addClass("answered");
+			var answer = $(this).text();
+			var $answer_box = $(".question.selected");
+			$answer_box.text(answer); 
+		}
+	}
+	function submitAnswers(){
+		$(".popUpWin,.maskLayer").css({
+			display:"block"
+		});
+		checkAnswers();
+	}
+	function closePopUpWin(){
+		$(".popUpWin,.maskLayer").css({
+			display:"none"
+		});
+		return false;
 	}
 	</script>
 </body>
