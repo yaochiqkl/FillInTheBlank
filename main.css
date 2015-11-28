@@ -104,9 +104,9 @@ a:active{ text-decoration: none; }
 .content #drag .dragImg{
 	display: inline-block;
 	background: url(drag.png) 0 -5px no-repeat;
-	background-size:45px 25px;
+	background-size:50px 25px;
 	height: 25px;
-	width: 25px;
+	width: 45px;
 }
 .content .foot {
 	overflow: auto;
@@ -137,7 +137,7 @@ a:active{ text-decoration: none; }
 .content .foot .answer {
 	margin: 0 auto;
 	width: 85%;	
-	border: 1px solid black;
+	border: 1px solid #141414;
 	padding: 5px;
 }
 .content .foot .answer table{

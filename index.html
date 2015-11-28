@@ -114,55 +114,36 @@
 		</article>
 		<footer class="foot">
 			<a href="" class="inquery">查解析</a>
-			<a href="" class="goback">回列表</a>
+			<a href="javascript:void(0);" class="goback">回列表</a>
 		</footer>
 	</div>
 	<footer></footer>
 	<script src="jquery.min.js"></script>
 	<!--<script src="main.js"></script>-->
 	<script>
+	//正确答案
+		var answers = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms");
+		//选项
+		var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
+		var analysis = new Array("第一题解析： \n a a a","第二题解析： a a a","第三题解析： a a a","第四题解析： a a a","第五题解析： a a a","第六题解析： a a a","第七题解析： a a a","第八题解析： a a a","第九题解析： a a a","第十题解析： a a a");
  		$(function(){
- 			//$(".main").scrollTop(0);
- 			
  			(function(){
  				//init triangle
  				var triangle = "<span id = 'triangle'>▲</div>";
  				$(".number").append(triangle);
  				$("#triangle").css({
  					"position":"relative",
- 					"left":"-122px"
+ 					"left":"-124px"
  				});
- 				//init drag
+ 				//init dragable function
  				bindResize(document.getElementById('main')); 
  			})();
- 			var clickEffect = function(){
- 				var $n = $(this).index();
- 				$(".question").removeClass("selected");
- 				$(".question:eq("+$n+")").addClass("selected");
- 				//跳转锚点
- 				location.hash="question"+$n;
- 				//三角
- 				$("#triangle").remove();
- 				var triangle = "<span id = 'triangle'>▲</div>";
- 				$(".number").append(triangle);
- 				var left = $n*27.2 - 122;
- 				$("#triangle").css({
- 					"position":"relative",
- 					"left":left+"px"
- 				});
- 			};
+ 			//init click effect
+
 			$(".question").click(clickEffect);
 			$(".question_number").click(clickEffect);
-			$("td").mouseover(function(){
-				$(this).addClass("mouseover");
-				var answer = $(this).text();
-				var $answer_box = $(".question.selected");
-				$answer_box.text(answer); 
-			});
-			$("td").mouseout(function(){
-				$(this).removeClass("mouseover");
-				$(".selected:not(.answered)").text("");
-			});
+			$("td").mouseover(mouseOver);
+			$("td").mouseout(mouseOut);
 			$("td").click(function(){
 				var $current = $(".selected");
 				var $n = $current.index();
@@ -175,23 +156,21 @@
 					$answer_box.text(answer); 
 				}
 			});
+			//Submit and Checkout
 			$(".submit").click(function(){
-/*				$(".popUpWin").css({
+ 				$(".popUpWin,.maskLayer").css({
 					display:"block"
 				});
-				$(".maskLayer").css({
-					display:"block"
-				});*/
 				checkAnswers();
 			});
+			$(".popUpWin .inquery").click(function(){
+				$(".popUpWin,.maskLayer").css({
+					display:"none"
+				});
+				console.log("return");
+				return false;
+			});
 		}); 
-	//正确答案
-	var answers = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms");
-	//选项
-	var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
-	for(var i = 0; i < options.length; i++){
-		//console.log(options[i]);
-	}
 	function checkAnswers () {
 		var accuracy = 0;
 		var answer = null;
@@ -220,10 +199,6 @@
 		accuracy = accuracy*10+"%";
 		$(".outcome").text(accuracy);
 	}
-	function showAnalysis () {
-
-	}
-	//drag realization
 	function bindResize(el){ 
 	       var els = el.style, 
 	           y = 0; 
@@ -237,9 +212,35 @@
 	           els.height = e.clientY - y + 'px' ;
 	       } 
 	       function up(){ 
-	            $(document).unbind("mousemove", mouseMove).unbind("mouseup", mouseUp) ;
+	            $(document).unbind("mousemove", move).unbind("mouseup", up) ;
 	       } 
 	   } 
+	function clickEffect(){
+	   	var $n = $(this).index();
+	   	$(".question").removeClass("selected");
+	   	$(".question:eq("+$n+")").addClass("selected");
+	   	//跳转锚点
+	   	location.hash="question"+$n;
+	   	//三角
+	   	$("#triangle").remove();
+	   	var triangle = "<span id = 'triangle'>▲</div>";
+	   	$(".number").append(triangle);
+	   	var left = $n*27.6 - 124;
+	   	$("#triangle").css({
+	   		"position":"relative",
+	   		"left":left+"px"
+	   	});
+	   }
+	function mouseOver(){
+		$(this).addClass("mouseover");
+		var answer = $(this).text();
+		var $answer_box = $(".question.selected");
+		$answer_box.text(answer); 
+	}
+	function mouseOut(){
+		$(this).removeClass("mouseover");
+		$(".selected:not(.answered)").text("");
+	}
 	</script>
 </body>
 </html>
