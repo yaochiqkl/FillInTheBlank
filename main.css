@@ -32,6 +32,17 @@ a:active{ text-decoration: none; }
 .content .head {
 	height: 40px;
 	background-color: #F5F5F5;
+	border-top: #C9C9C9 1px solid;
+	border-bottom: #C9C9C9 1px solid;
+}
+.content .head .goback{
+	background: url(back.png) 10px 8px no-repeat ;
+	background-size:25px 25px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding:  0;
+	cursor: pointer;
 }
 .content .head .submit{
 	float: right;
@@ -48,6 +59,9 @@ a:active{ text-decoration: none; }
 	padding: 10px;
 	box-shadow: -3px -3px 4px #DBDBDB inset;
 	line-height: 35px;
+	position: relative;
+	min-height: 200px;
+	max-height: 350px;
 	/*border: 1px solid grey;*/
 }
 .content .main .text .question{
@@ -81,9 +95,21 @@ a:active{ text-decoration: none; }
 	color: white;
 	padding: 5px 10px;
 }
-
+.content #drag{
+	cursor: n-resize; 
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.content #drag .dragImg{
+	display: inline-block;
+	background: url(drag.png) 0 -5px no-repeat;
+	background-size:45px 25px;
+	height: 25px;
+	width: 25px;
+}
 .content .foot {
-
+	overflow: auto;
 }
 .content .foot .number{
 	text-align: center;
