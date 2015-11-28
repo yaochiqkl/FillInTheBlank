@@ -64,6 +64,21 @@ a:active{ text-decoration: none; }
 	max-height: 350px;
 	/*border: 1px solid grey;*/
 }
+.content .main .tip{
+}
+.content .main .tip .book_img{
+	padding-top: 8px;
+	margin-bottom: -3px;
+	margin-right: -5px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background: url(book.png) 0 14px no-repeat;
+	background-size: 18px 18px;
+}
+.content .main .tip .text{
+	font-weight: bold;
+}
 .content .main .text .question{
 	display: inline-block;
 	padding-bottom: 10px;
@@ -110,6 +125,7 @@ a:active{ text-decoration: none; }
 }
 .content .foot {
 	overflow: auto;
+	height: 280px;
 }
 .content .foot .number{
 	text-align: center;
@@ -136,13 +152,15 @@ a:active{ text-decoration: none; }
 }
 .content .foot .answer {
 	margin: 0 auto;
-	width: 85%;	
-	border: 1px solid #141414;
+	width: 98%;	
+	height: 200px;
 	padding: 5px;
 }
 .content .foot .answer table{
-	width: 100%;
+	width: 80%;
+	margin: 0 auto;
 	text-align: center;
+	border: 2px solid black;
 }
 .content .foot .answer table td{
 	border: 1px solid #F5F5F5;
@@ -157,7 +175,17 @@ a:active{ text-decoration: none; }
 	color: inherit;
 	text-decoration: line-through;
 }
-
+.content .foot .answer #analysis{
+	width: 98%;
+	border-top:1px solid #A4A4A4;
+}
+.content .foot .answer #analysis .title{
+	font-weight: bold;
+	padding:10px 20px;
+}
+.content .foot .answer #analysis .content{
+	padding-left: 20px;
+}
 .popUpWin{
 	background-color: white;
 	position:fixed;
