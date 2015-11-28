@@ -1,3 +1,7 @@
+//正确答案
+//var answers = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms");
+//选项
+//var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
 var analysis = [
 	{
 		"answer":"第一题答案",

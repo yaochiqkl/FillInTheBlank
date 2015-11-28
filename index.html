@@ -200,8 +200,8 @@
 	}
 	function tableClick(){
 		var $current = $(".selected");
-		var $n = $current.index();
 		if ($current.length>0) {
+			var $n = parseInt($current.attr("id").slice(-1));
 			$current.removeClass("mouseover").removeClass("selected").addClass("answered");
 			$(".question_number:eq("+$n+")").addClass("answered");
 			$(this).addClass("answered");
