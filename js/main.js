@@ -27,6 +27,7 @@
 		$(".content .main .tip").after(html);
 		//fixnumbers
 		$(".num").each(function(){$(this).html(parseInt($(this).html())+1);});
+		$("#question0").addClass("selected");
 	}
 	function initOptions(){
 		options.sort(function(a,b){ return Math.random()>0.5 ? -1 : 1;});

@@ -36,7 +36,7 @@ a:active{ text-decoration: none; }
 	border-bottom: #C9C9C9 1px solid;
 }
 .content .head .goback{
-	background: url(back.png) 10px 8px no-repeat ;
+	background: url(../img/back.png) 10px 8px no-repeat ;
 	background-size:25px 25px;
 	display: inline-block;
 	width: 40px;
@@ -73,7 +73,7 @@ a:active{ text-decoration: none; }
 	width: 25px;
 	height: 25px;
 	display: inline-block;
-	background: url(book.png) 0 14px no-repeat;
+	background: url(../img/book.png) 0 14px no-repeat;
 	background-size: 18px 18px;
 }
 .content .main .tip .text_tip{
@@ -133,7 +133,7 @@ a:active{ text-decoration: none; }
 }
 .content #drag .dragImg{
 	display: inline-block;
-	background: url(drag.png) 0 -5px no-repeat;
+	background: url(../img/drag.png) 0 -5px no-repeat;
 	background-size:50px 25px;
 	height: 25px;
 	width: 45px;
