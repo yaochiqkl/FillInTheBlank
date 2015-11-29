@@ -92,18 +92,6 @@
 	<script src="jquery.min.js"></script>
 	<script src="data.js"></script>
 	<script>
- 		$(function(){
- 			console.log(passage);
- 			var result = passage.replace(/\$(\d)([^(])/g,"<div class='blank'><span class='num'>$1</span>"+"<span class='question' id='question$1'></span></div>$2");
- 			result = result.replace(/\$(\d)\(([^)]*)\)/g,"<span class='tip$1'>$2</span>");
- 			result = result.replace(/^/,"<div class='text'>");
- 			result = result.replace(/&/,"</div>");
- 			console.log(result);
- 			var html = $.parseHTML(result);
-	 		$(".content .main .tip").after(html);
-	 		//fixnumbers
-	 		$(".num").each(function(){$(this).html(parseInt($(this).html())+1);});
-		}); 
 	</script>
 	<script src="main.js"></script>
 </body>

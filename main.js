@@ -2,18 +2,31 @@
  			initPage();
 		}); 
 	function initPage(){
+		//init passage and so on
+		initData();
 		//init Options randomly
 		initOptions();
 		//init triangle
 		initTriangle();
 		//init dragable function
-		bindResize(document.getElementById('main')); 4
+		bindResize(document.getElementById('main')); 
 		//bind click events
 		$(".question,.question_number").click(clickEffect);
 		$("td").mouseover(mouseOver).mouseout(mouseOut).click(tableClick);
 		//Submit and Checkout
 		$(".submit").click(submitAnswers);
 		$(".popUpWin .inquery").click(closePopUpWin);
+	}
+	function initData(){
+		var result = passage.replace(/\$(\d)([^(])/g,"<div class='blank'><span class='num'>$1</span>"+"<span class='question' id='question$1'></span></div>$2");
+		result = result.replace(/\$(\d)\(([^)]*)\)/g,"<span class='tip$1'>$2</span>");
+		result = result.replace(/^/,"<div class='text'>");
+		result = result.replace(/&/,"</div>");
+		console.log(result);
+		var html = $.parseHTML(result);
+		$(".content .main .tip").after(html);
+		//fixnumbers
+		$(".num").each(function(){$(this).html(parseInt($(this).html())+1);});
 	}
 	function initOptions(){
 		options.sort(function(a,b){ return Math.random()>0.5 ? -1 : 1;});
