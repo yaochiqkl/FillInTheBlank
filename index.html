@@ -118,7 +118,16 @@
 	<script src="data.js"></script>
 	<script src="main.js"></script>
 	<script>
-		console.log(passage);
+ 		$(function(){
+ 			var test ="<div style='color:red;'>hello</div>";
+ 			var html = $.parseHTML(test);
+ 			console.log(html);
+ 			console.log(passage);
+ 			var a = passage.replace(/\$(\d)/g,"<div class='$1'>aa</div>");
+ 			console.log(a);
+ 			//$(".submit").append(html);
+
+		}); 
 	</script>
 </body>
 </html>
