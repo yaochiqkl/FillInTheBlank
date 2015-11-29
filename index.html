@@ -19,25 +19,28 @@
 				<span class="text">点击空格处，选择最恰当的单词</span>
 			</div>
 			<div class="text">
-				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or <span class="tip0">sisters</span> have a higher risk of 1
-				<span class="question selected" id="question0"></span> 
-				it, too? <span class="tip0">According to</span> the largest study of siblings (兄弟姐妹) in families with autism, the answer is maybe yes. Among 664 children who had at least one older sibling with the <span class="tip1">developmental disorder</span>, the 2 
-				<span class="question " id="question1"></span> 
-				<span class="tip1">risk of autism</span> was nearly 19%, 3 
-				<span class="question " id="question2"></span> 
+				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or <span class="tip0">sisters</span> have a higher risk of 
+				<div class="blank">1<span class="question selected" id="question0"></span></div>
+				it, too? <span class="tip0">According to</span> the largest study of siblings (兄弟姐妹) in families with autism, the answer is maybe yes. Among 664 children who had at least one older sibling with the <span class="tip1">developmental disorder</span>, the 
+				<div class="blank">2<span class="question " id="question1"></span></div>
+				<span class="tip1">risk of autism</span> was nearly 19%, 
+				3<span class="question " id="question2"></span> 
 				higher than previous<span class="tip2">sibling-recurrence</span>  estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
-				The 4 
-				<span class="question " id="question3"></span> 
-				suggest that genes play a key role  <span class="tip3">in</span> autism risk. But they also hint that other environmental factors <span class="tip4">in</span> 5 
-				<span class="question " id="question4"></span> 
-				by siblings, like influences in the womb (子宫), may be important as well. 
-				On the 6 
-				<span class="question " id="question5"></span> 
-				of the findings, the researchers recommend <span class="tip5">in</span> that doctors closely 7 
-				<span class="question " id="question6"></span> younger <span class="tip6">in</span> siblings of autistic children to pick up any early signs of the disorder, 8 
-				<span class="question " id="question7"></span> an <span class="tip7">unusually</span> large head or delayed language development and communication skills. Evidence suggests <span class="tip8">unusually</span> that early 9
-				<span class="question " id="question8"></span> and diagnosis of <span class="tip9">unusually</span>  autism can help children take advantage of therapies that can treat some of its 10
-				<span class="question " id="question9"></span>
+				The 
+				<div class="blank">4<span class="question " id="question3"></span></div>
+				suggest that genes play a key role  <span class="tip3">in</span> autism risk. But they also hint that other environmental factors <span class="tip4">in</span> 
+				<div class="blank">5<span class="question " id="question4"></span></div> 
+				by siblings, like influences in the womb (子宫), may be important as well.
+				On the 
+				<div class="blank">6<span class="question " id="question5"></span></div> 
+				of the findings, the researchers recommend <span class="tip5">in</span> that doctors closely 
+				<div class="blank">7<span class="question " id="question6"></span></div>
+				younger <span class="tip6">in</span> siblings of autistic children to pick up any early signs of the disorder, 
+				<div class="blank">8<span class="question " id="question7"></span></div> 
+				an <span class="tip7">unusually</span> large head or delayed language development and communication skills. Evidence suggests <span class="tip8">unusually</span> that early 
+				<div class="blank">9<span class="question " id="question8"></span></div> 
+				and diagnosis of <span class="tip9">unusually</span>  autism can help children take children advantage of therapies that can treat some of its 
+				<div class="blank">10<span class="question " id="question9"></span></div>
 				
 			</div>
 		</section>
@@ -60,29 +63,19 @@
 			<div class="answer">
 				<table>
 					<tr>
-						<td>common</td>
-						<td>results</td>
-						<td>consequently</td>
+						<td></td><td></td><td></td>
 					</tr>
 					<tr>
-						<td>basis</td>
-						<td>detection</td>
-						<td>monitor</td>
+						<td></td><td></td><td></td>
 					</tr>
 					<tr>
-						<td>symbols</td>
-						<td>average</td>
-						<td>dramatically</td>
+						<td></td><td></td><td></td>
 					</tr>
 					<tr>
-						<td>symptoms</td>
-						<td>reason</td>
-						<td>distibuted</td>
+						<td></td><td></td><td></td>
 					</tr>
 					<tr>
-						<td>including</td>
-						<td>developing</td>
-						<td>shared</td>
+						<td></td><td></td><td></td>
 					</tr>
 				</table>
 			</div>
@@ -116,173 +109,16 @@
 			</table>
 		</article>
 		<footer class="foot">
-			<a href="" class="inquery">查解析</a>
+			<a href="#" class="inquery">查解析</a>
 			<a href="javascript:void(0);" class="goback">回列表</a>
 		</footer>
 	</div>
 	<footer></footer>
 	<script src="jquery.min.js"></script>
 	<script src="data.js"></script>
-	<!--<script src="main.js"></script>-->
+	<script src="main.js"></script>
 	<script>
-		//正确答案
-		var answers = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms");
-		//选项
-		var options = new Array("common","results","consequently","basis","detection","monitor","symbols","average","dramatically","symptoms","reason","distributed","including","developing","shared");
- 		$(function(){
- 			initPage();
-		}); 
-	function initPage(){
-		//init triangle
-		initTriangle();
-		//init dragable function
-		bindResize(document.getElementById('main')); 
-		$(".question,.question_number").click(clickEffect);
-		$("td").mouseover(mouseOver).mouseout(mouseOut).click(tableClick);
-		//Submit and Checkout
-		$(".submit").click(submitAnswers);
-		$(".popUpWin .inquery").click(closePopUpWin);
-	}
-	function initTriangle(){
-	   	$("#triangle").remove();
-		var triangle = "<span id = 'triangle'>▲</div>";
-		$(".number").append(triangle);
-		$("#triangle").css({
-			"position":"relative",
-			"left":"-124px"
-		});
-	}
-	function moveTriangle($n){
-		$("#triangle").remove();
-		var triangle = "<span id = 'triangle'>▲</div>";
-		$(".number").append(triangle);
-		var left = $n*27.6 - 124;
-		$("#triangle").css({
-			"position":"relative",
-			"left":left+"px"
-		});
-	}
-	function bindResize(el){ 
-	       var els = el.style, 
-	           y = 0; 
-	       $("#drag").mousedown(function(e){ 
-	           //按下元素后，计算当前鼠标与对象计算后的坐标 
-	           y = e.clientY - el.offsetHeight + 20; 
-	           $(document).bind("mousemove",move).bind("mouseup",up) ;
-	           e.preventDefault() ;
-	       }); 
-	       function move(e){ 
-	           els.height = e.clientY - y + 'px' ;
-	       } 
-	       function up(){ 
-	            $(document).unbind("mousemove", move).unbind("mouseup", up) ;
-	       } 
-	} 
-	function clickEffect(){
-	   	var $n = parseInt($(this).attr("id").slice(-1));
-	   	$(".question").removeClass("selected");
-	   	$(".question:eq("+$n+")").addClass("selected");
-	   	//跳转锚点
-	   	//location.hash="question"+$n;
-	    $(".content .main").animate({scrollTop:$("#quesion0")},800);
-	   	//三角
-	   	moveTriangle($n);
-	}
-	function mouseOver(){
-		$(this).addClass("mouseover");
-		var answer = $(this).text();
-		var $answer_box = $(".question.selected");
-		$answer_box.text(answer); 
-	}
-	function mouseOut(){
-		$(this).removeClass("mouseover");
-		$(".selected:not(.answered)").text("");
-	}
-	function tableClick(){
-		var $current = $(".selected");
-		if ($current.length>0) {
-			var $n = parseInt($current.attr("id").slice(-1));
-			$current.removeClass("mouseover").removeClass("selected").addClass("answered");
-			$(".question_number:eq("+$n+")").addClass("answered");
-			$(this).addClass("answered");
-			var answer = $(this).text();
-			var $answer_box = $(".question.selected");
-			$answer_box.text(answer); 
-		}
-	}
-	function submitAnswers(){
-		$(".popUpWin,.maskLayer").css({
-			display:"block"
-		});
-		checkAnswers();
-		showAnalysis();
-	}
-	function closePopUpWin(){
-		$(".popUpWin,.maskLayer").css({
-			display:"none"
-		});
-		return false;
-	}
-	function checkAnswers () {
-		var accuracy = 0;
-		var answer = null;
-		$(".question").removeClass("selected").removeClass("answered");
-		$(".question_number").removeClass("selected").removeClass("answered");
-		for(var i = 0; i < 10; i++){
-			answer = $("#question"+i).text();
-			if( answer == answers[i]){
-				accuracy++;
-				$(".popUpWin .main td:eq("+i+")").addClass("correct");
-				$(".content .foot .number span:eq("+i+")").addClass("correct");
-				$("#question"+i).addClass("correct");
-			} else {
-				$(".popUpWin .main td:eq("+i+")").addClass("incorrect");
-				$(".content .foot .number span:eq("+i+")").addClass("incorrect");
-				$("#question"+i).addClass("incorrect");
-				//插入正确答案
-				if ($("#question"+i).text() === '') {
-					$("#question"+i).html("<span style='color:black;text-decoration:none;display:inline-block;'>-</span>");
-					$("#question"+i).addClass("undo");
-				}
-				var correct_answer = "<span class = 'correct_answer'>"+answers[i]+"</span>";
-				$("#question"+i).after(correct_answer);
-			}
-		}
-
-		accuracy = accuracy*10+"%";
-		$(".outcome").text(accuracy);
-	}
-	function showAnalysis(){
-		initTriangle();
-		var $text = $("<div id='analysis'><div class='title'>答案</div><div class='content result'></div><div class='title'>结构</div><div class='content structure'></div></div>");
-		$(".content .answer table").remove();
-		$(".content .answer").append($text);
-		$("#analysis .result").text(analysis[0].answer);
-		$("#analysis .structure").text(analysis[0].structure);
-		$(".question,.question_number").unbind("click",clickEffect).click(showAnalysisClick);
-		$(".submit").remove();
-		location.hash="question0";
-		$(".tip0").addClass("highlight");
-	}
-	function showAnalysisClick(){
-		removeHighlight();
-		//cancel the solution of getting index
-		var $n = parseInt($(this).attr("id").slice(-1));
-		moveTriangle($n);
-		showDetails($n);
-		addHighlight($n);
-		location.hash="question"+$n;
-	}
-	function showDetails($n){
-		$("#analysis .result").text(analysis[$n].answer);
-		$("#analysis .structure").text(analysis[$n].structure);
-	}
-	function addHighlight($n){
-		$(".tip"+$n).addClass("highlight");
-	}
-	function removeHighlight(){
-		$(".content .main .text span").removeClass("highlight");
-	}
+		console.log(passage);
 	</script>
 </body>
 </html>

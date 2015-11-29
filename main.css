@@ -79,6 +79,10 @@ a:active{ text-decoration: none; }
 .content .main .tip .text{
 	font-weight: bold;
 }
+.content .main .blank{
+	display: inline-block;
+	white-space: nowrap;
+}
 .content .main .text .question{
 	display: inline-block;
 	padding-bottom: 10px;
