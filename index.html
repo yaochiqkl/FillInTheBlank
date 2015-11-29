@@ -16,32 +16,7 @@
 		<section class="main" id="main">
 			<div class="tip">
 				<span class="book_img"></span>
-				<span class="text">点击空格处，选择最恰当的单词</span>
-			</div>
-			<div class="text">
-				It's the first question parents ask when their child is diagnosed with autism (自闭症). Will his future brothers or <span class="tip0">sisters</span> have a higher risk of 
-				<div class="blank">1<span class="question selected" id="question0"></span></div>
-				it, too? <span class="tip0">According to</span> the largest study of siblings (兄弟姐妹) in families with autism, the answer is maybe yes. Among 664 children who had at least one older sibling with the <span class="tip1">developmental disorder</span>, the 
-				<div class="blank">2<span class="question " id="question1"></span></div>
-				<span class="tip1">risk of autism</span> was nearly 19%, 
-				3<span class="question " id="question2"></span> 
-				higher than previous<span class="tip2">sibling-recurrence</span>  estimates that were anywhere from 3% to 10%. Kids with more than one older autistic sibling had an even higher risk of the disorder: 32%. 
-				The 
-				<div class="blank">4<span class="question " id="question3"></span></div>
-				suggest that genes play a key role  <span class="tip3">in</span> autism risk. But they also hint that other environmental factors <span class="tip4">in</span> 
-				<div class="blank">5<span class="question " id="question4"></span></div> 
-				by siblings, like influences in the womb (子宫), may be important as well.
-				On the 
-				<div class="blank">6<span class="question " id="question5"></span></div> 
-				of the findings, the researchers recommend <span class="tip5">in</span> that doctors closely 
-				<div class="blank">7<span class="question " id="question6"></span></div>
-				younger <span class="tip6">in</span> siblings of autistic children to pick up any early signs of the disorder, 
-				<div class="blank">8<span class="question " id="question7"></span></div> 
-				an <span class="tip7">unusually</span> large head or delayed language development and communication skills. Evidence suggests <span class="tip8">unusually</span> that early 
-				<div class="blank">9<span class="question " id="question8"></span></div> 
-				and diagnosis of <span class="tip9">unusually</span>  autism can help children take children advantage of therapies that can treat some of its 
-				<div class="blank">10<span class="question " id="question9"></span></div>
-				
+				<span class="text_tip">点击空格处，选择最恰当的单词</span>
 			</div>
 		</section>
 		<div id="drag">
@@ -116,18 +91,20 @@
 	<footer></footer>
 	<script src="jquery.min.js"></script>
 	<script src="data.js"></script>
-	<script src="main.js"></script>
 	<script>
  		$(function(){
- 			var test ="<div style='color:red;'>hello</div>";
- 			var html = $.parseHTML(test);
- 			console.log(html);
  			console.log(passage);
- 			var a = passage.replace(/\$(\d)/g,"<div class='$1'>aa</div>");
- 			console.log(a);
- 			//$(".submit").append(html);
-
+ 			var result = passage.replace(/\$(\d)([^(])/g,"<div class='blank'><span class='num'>$1</span>"+"<span class='question' id='question$1'></span></div>$2");
+ 			result = result.replace(/\$(\d)\(([^)]*)\)/g,"<span class='tip$1'>$2</span>");
+ 			result = result.replace(/^/,"<div class='text'>");
+ 			result = result.replace(/&/,"</div>");
+ 			console.log(result);
+ 			var html = $.parseHTML(result);
+	 		$(".content .main .tip").after(html);
+	 		//fixnumbers
+	 		$(".num").each(function(){$(this).html(parseInt($(this).html())+1);});
 		}); 
 	</script>
+	<script src="main.js"></script>
 </body>
 </html>

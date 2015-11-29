@@ -61,7 +61,7 @@
 	   	$(".question").removeClass("selected");
 	   	$(".question:eq("+$n+")").addClass("selected");
 	   	//跳转锚点
-	   	//location.hash="question"+$n;
+	   	location.hash="question"+$n;
 	    $(".content .main").animate({scrollTop:$("#quesion0")},800);
 	   	//三角
 	   	moveTriangle($n);

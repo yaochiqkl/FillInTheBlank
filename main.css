@@ -61,7 +61,7 @@ a:active{ text-decoration: none; }
 	line-height: 35px;
 	position: relative;
 	min-height: 200px;
-	max-height: 350px;
+	max-height: 450px;
 	/*border: 1px solid grey;*/
 }
 .content .main .tip{
@@ -76,7 +76,7 @@ a:active{ text-decoration: none; }
 	background: url(book.png) 0 14px no-repeat;
 	background-size: 18px 18px;
 }
-.content .main .tip .text{
+.content .main .tip .text_tip{
 	font-weight: bold;
 }
 .content .main .blank{
